@@ -1,0 +1,716 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+/* Style for the logo */
+.nike-logo {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(45deg, #2086ae, #b5319b);
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 2;
+   
+}
+
+.sidebar ul li {
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li:hover {
+    background: #444;
+}
+
+.sidebar ul li:first-child:hover {
+    background: none;
+}
+
+.sidebar ul li:first-child {
+    line-height: 60px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+
+.sidebar ul li a {
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    min-width: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.sidebar .title {
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+/* Main Content Styling */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    min-height: 100vh;
+    left: 300px;
+    background: #f5f5f5;
+}
+
+/* Top Bar Styling */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 300px;
+    height: 60px;
+    width: calc(100% - 300px);
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 20px;
+    align-items: center;
+    color: #444;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.top-bar .search {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search input {
+    width: 100%;
+    min-width: 128px;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+    background: #f5f5f5;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search i {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.top-bar .user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styling */
+.cards {
+    margin-top: 60px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    gap: 90px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.cards .card {
+    background: linear-gradient(45deg, #47cebe, #ef4a82);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    min-width: 220px;
+    flex: none;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.number {
+    font-size: 35px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.card-name {
+    color: #444;
+    font-weight: 600;
+}
+
+.icon-box {
+    font-size: 45px;
+    color: #444;
+}
+
+/* Metrics Section */
+.tables {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    align-items: self-start;
+    padding: 0 20px 20px 20px;
+}
+
+.img-box-small {
+    position: relative;
+    width: 400px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* Top Bar Icons */
+.top-bar .icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-bar .icon {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Notification Dot */
+.notification-dot {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: block;
+}
+
+/* Padding and Spacing */
+.top-bar .icons .icon i {
+    padding: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.top-bar .icons .icon i:hover {
+    color: #007bff;
+}
+/* Featured Section */
+.featured {
+    position: relative;
+    margin: 20px;
+}
+
+.featured-product {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.featured-product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Labels for New and Hot */
+.labels {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.new, .hot {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hot {
+    background-color: orange;
+}
+
+/* Price Box at Bottom Left */
+.price-box {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.price-box p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Featured Section */
+.featured-section {
+    top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ffde89, #ffe9b8);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    max-width: 600px;  
+    width: 100%; 
+    overflow: hidden;
+}
+
+
+/* Featured Card */
+.featured-card {
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Labels Position */
+.labels {
+    position: absolute;
+    bottom: 20px; 
+    left: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Styling for the Labels */
+.new, .hot {
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.new {
+    background-color: #ff6b6b;
+}
+
+.hot {
+    background-color: #ffa41b;
+}
+
+/* Text Content */
+.text-content {
+    max-width: 500px;
+    text-align: left;
+}
+
+.text-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-content h2 {
+    font-size: 28px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.text-content .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.text-content .price .discount {
+    font-size: 18px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.text-content .colors {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Product Image */
+.product-image {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+/* Recent Products Section */
+.recent-products {
+    margin-top: -100px;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px; 
+    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-box {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%; 
+    overflow: hidden;
+    background: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-box img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    border-radius: 10px;
+}
+
+/* Hover effect for images */
+.product-card:hover .product-box img {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    z-index: 10;
+}
+
+/* Title and pricing adjustments */
+.product-card h3 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-card p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #777;
+}
+
+.product-card .discount {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.labels {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+
+.recent-products h2 {
+    font-size: 24px;  
+    font-weight: bold;  
+    color: #333;  
+    margin-bottom: 10px;  
+    text-align: left;  
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    padding-left: 10px;
+    top: 500px;
+}
+
+
+/* Product Views Section in the Right Corner */
+.product-views {
+    position: absolute;
+    top: 50px; 
+    right: 20px;
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 10px;
+   
+}
+
+/* Optional: Adjust the width of the graph container and other content inside if needed */
+.graph-container {
+    width: 100%; 
+    position: relative;
+}
+
+.graph-container img {
+    width: 100%; 
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Keep the rest of the styling the same */
+.timeframe {
+    margin-top: 10px;
+}
+
+.timeframe button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timeframe ul {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.timeframe ul li {
+    color: #444;
+    cursor: pointer;
+}
+
+.timeframe ul li:hover {
+    color: #ff6b6b;
+}
+
+
+/* Responsive Design: Adjust grid on smaller screens */
+@media (max-width: 1100px) {
+    .product-cards {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 800px) {
+    .product-cards {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .product-views {
+        width: 250px; 
+    }
+}
+
+@media (max-width: 500px) {
+    .product-cards {
+        grid-template-columns: 1fr; 
+    }
+
+    .product-views {
+        width: 100%; 
+        position: relative;
+        top: 10px;
+        right: 0;
+    }
+}
+/* Styling for the product box */
+
+
+
+
+
+
+
+.tables {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    position: absolute;
+    top: 450px; 
+    left: 450px; 
+    z-index: 1; 
+}
+
+.metric {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px; 
+    transition: transform 0.2s ease-in-out; 
+}
+
+.metric:hover {
+    transform: scale(1.05);
+}
+
+.metric h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.metric p {
+    font-size: 16px;
+    color: #777;
+}
+
+.metric-img {
+    width: 40px;
+    height: 30px; 
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-bottom: 10px; 
+}
+
+/* Optional: Add a media query to make it responsive */
+@media (max-width: 768px) {
+    .tables {
+        align-items: center;
+    }
+    .metric {
+        width: 150px; /* Reduce width on smaller screens */
+    }
+}
+/*new showes*/
+
+.carousel-container {
+    width: 250px; 
+    height: 150px; 
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    position: relative;
+    margin: 20px auto;
+    left: 200px;
+    nav-up: 100px;
+    bottom: 150px;
+}
+
+/* The carousel itself */
+.carousel {
+    display: flex; 
+    animation: slide 10s infinite linear; 
+}
+
+/* Each individual slide */
+.slide {
+    min-width: 100%; 
+    height: 100%;
+    transition: transform 1s ease-in-out; 
+}
+
+/* Image inside each slide */
+.slide img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; 
+    transform: translateY(-10%); 
+}
+/* Keyframes for sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
+
