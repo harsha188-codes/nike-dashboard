@@ -11,3 +11,12 @@ Recent Products to Shop: Quick access to recently added items.
 Sliding Window for Shoes: A visually appealing sliding showcase for Nike shoes.
 3. Search Bar
 A clean and functional search bar for product discovery.
+
+Clone and Navigate the Nike Dashboard Repository
+Step 1: Clone the Repository
+To clone the repository, run the following command in your terminal or command prompt:
+git clone https://github.com/harsha188-codes/nike-dashboard.git
+Step 2: Navigate to the Project Directory
+After cloning, navigate to the project directory using:
+cd nike-dashboard
+Step 3: Open the Project
